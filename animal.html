@@ -17,10 +17,8 @@
     <script type="module">
       import * as THREE from 'https://threejs.org/build/three.module.js';
 
-      // Create a scene
       const scene = new THREE.Scene();
 
-      // Create a camera
       const camera = new THREE.PerspectiveCamera(
         75,
         window.innerWidth / window.innerHeight,
@@ -29,18 +27,17 @@
       );
       camera.position.z = 5;
 
-      // Create a renderer
       const renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth, window.innerHeight);
       document.body.appendChild(renderer.domElement);
 
-      const mat_dark = new THREE.MeshBasicMaterial({ color: 'orange' });
-      const mat_grey = new THREE.MeshBasicMaterial({ color: 'white' });
-
+      const orange = new THREE.MeshBasicMaterial({ color: 'orange' });
+      const white = new THREE.MeshBasicMaterial({ color: 'white' });
+	  const black = new THREE.MeshBasicMaterial({ color: 'black' });
       const cat = new THREE.Group();
 
       const geo_head = new THREE.IcosahedronGeometry(1, 0);
-      const catHead = new THREE.Mesh(geo_head, mat_dark);
+      const catHead = new THREE.Mesh(geo_head, orange);
       catHead.scale.z = 0.6;
       catHead.scale.y = 1.1;
       catHead.position.y = 2.5;
@@ -48,25 +45,25 @@
       cat.add(catHead);
 
       const geo_body = new THREE.IcosahedronGeometry(3.5, 0);
-      const catBody = new THREE.Mesh(geo_body, mat_dark);
+      const catBody = new THREE.Mesh(geo_body, orange);
       catBody.position.set(0, catHead.position.y, -2.2);
       catBody.scale.set(0.5, 0.5, 0.6);
       catBody.rotation.set(0, 0, 1.04);
       cat.add(catBody);
 
       const geo_tail = new THREE.IcosahedronGeometry(0.5, 0);
-      const catTail = new THREE.Mesh(geo_tail, mat_dark);
+      const catTail = new THREE.Mesh(geo_tail, orange);
       catTail.position.set(catHead.position.x, catHead.position.y + 1.2, -3.8);
       cat.add(catTail);
 
      const ear = [];
       const geo_ear = new THREE.ConeGeometry(0.3, 1, 3);
       for (let i = 0; i < 2; i++) {
-        ear[i] = new THREE.Mesh(geo_ear, mat_grey);
+        ear[i] = new THREE.Mesh(geo_ear, white);
         cat.add(ear[i]);
       }
 
-      ear[0].position.set(-0.4, catHead.position.y + 0.9, 0.1);
+      ear[0].position.set(-0.6, catHead.position.y + 0.9, 0.4);
       ear[1].position.set(0.12, catHead.position.y + 0.9, 0.4);
 
       ear[0].rotation.set(Math.PI/12, 0, Math.PI/3);
@@ -75,11 +72,10 @@
       ear[0].scale.set(0.6, 0.6, 0.6);
       ear[1].scale.set(0.6, 0.6, 0.6);
 
-      // Legs
       const legs = [];
       const geo_leg = new THREE.CylinderGeometry(0.15, 0.1, 1, 5);
       for (let i = 0; i < 4; i++) {
-        legs[i] = new THREE.Mesh(geo_leg, mat_dark);
+        legs[i] = new THREE.Mesh(geo_leg, orange);
         cat.add(legs[i]);
       }
 
@@ -88,11 +84,10 @@
       legs[2].position.set(0.8, 1.1, -3);
       legs[3].position.set(-0.8, 1.1, -3);
 
-      // Feet
       const feet = [];
       const geo_foot = new THREE.DodecahedronGeometry(0.2, 0);
       for (let i = 0; i < legs.length; i++) {
-        feet[i] = new THREE.Mesh(geo_foot, mat_grey);
+        feet[i] = new THREE.Mesh(geo_foot, white);
         cat.add(feet[i]);
         feet[i].scale.set(1, 0.8, 1);
         feet[i].position.set(legs[i].position.x, 0, legs[i].position.z + 0.09);
@@ -102,11 +97,10 @@
       feet[2].position.y = 0.7;
       feet[3].position.y = 0.7;
 
-      // Eyes
       const geo_eye = new THREE.CylinderGeometry(0.2, 0.15, 0.05, 8);
       const eyes = [];
       for (let i = 0; i < 2; i++) {
-        eyes[i] = new THREE.Mesh(geo_eye, mat_grey);
+        eyes[i] = new THREE.Mesh(geo_eye, white);
         cat.add(eyes[i]);
         eyes[i].position.set(0, catHead.position.y + 0.1, 0.5);
         eyes[i].rotation.x = Math.PI / 2 - Math.PI / 15;
@@ -118,11 +112,10 @@
       eyes[0].rotation.z = -Math.PI / 15;
       eyes[1].rotation.z = -eyes[0].rotation.z;
 
-      // Eyeballs
       const geo_eyeball = new THREE.SphereGeometry(0.07, 32, 32);
       const eyeballs = [];
       for (let i = 0; i < 2; i++) {
-        eyeballs[i] = new THREE.Mesh(geo_eyeball, mat_dark);
+        eyeballs[i] = new THREE.Mesh(geo_eyeball, black);
         cat.add(eyeballs[i]);
         eyeballs[i].castShadow = true;
         eyeballs[i].position.set(
@@ -137,18 +130,15 @@
       cat.rotation.set(0, Math.PI / 4, 0);
       scene.add(cat);
 
-      // Animation
       const animate = function () {
         requestAnimationFrame(animate);
 
-        // Rotate the cat
         cat.rotation.x += 0.01;
         cat.rotation.y += 0.01;
 
         renderer.render(scene, camera);
       };
 
-      // Handle window resize
       window.addEventListener('resize', () => {
         const newWidth = window.innerWidth;
         const newHeight = window.innerHeight;
@@ -159,7 +149,6 @@
         renderer.setSize(newWidth, newHeight);
       });
 
-      // Start animation
       animate();
     </script>
   </body>
