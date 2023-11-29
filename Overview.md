@@ -31,12 +31,13 @@
    like rotate. 
    
    ## some sample code and output for a rotating circle:
+   <img width="734" alt="Screenshot 2023-11-29 at 6 43 51 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/97d0a67a-490f-4b68-a651-d19b8bdf6d1d">
    
+   <img width="1440" alt="Screenshot 2023-11-29 at 6 42 03 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/b3ac3a15-878d-4a33-b057-e3e282fdcbb1">
    
+   <img width="1440" alt="Screenshot 2023-11-29 at 6 42 07 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/bd7ac613-db18-4c16-b9c3-3d3895220f29">
    
-   
-   
-   
+   <img width="1440" alt="Screenshot 2023-11-29 at 6 42 09 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/c51bb07d-fdbd-4a25-ba9d-6ce2d48a86dd">
 
 
 # References:
