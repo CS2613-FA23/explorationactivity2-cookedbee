@@ -14,7 +14,7 @@
 
 # Question 3 ✨
    
-   The purpose of my program is to create a 3D animated animal creature (it's supposed to reseble a cat....) that rotates. The  
+   The purpose of my program is to create a 3D animated animal creature (it's supposed to resemble a cat....) that rotates. The  
    animation is hosted on a html webpage. I wanted to create something simple that shows off the main functionalities of the library.
 
 # Question 4 ✨
