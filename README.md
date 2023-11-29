@@ -23,13 +23,15 @@
 
    Here are some sample screenshots:
    
+   <img width="1440" alt="Screenshot 2023-11-29 at 4 14 16 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/ba4bc053-2ee0-4e75-9d9f-ad182f6840e1">
+
+<img width="1440" alt="Screenshot 2023-11-29 at 4 14 21 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/6a28420a-8ad5-40c5-b953-25497ec818f5">
+
+<img width="1440" alt="Screenshot 2023-11-29 at 4 14 23 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/7275835b-17e9-45bf-a042-5313ab57188c">
+
+<img width="1440" alt="Screenshot 2023-11-29 at 4 14 26 PM" src="https://github.com/CS2613-FA23/explorationactivity2-cookedbee/assets/118692386/6dcc2306-06a6-430f-985e-16867054f6a2">
 
 
-
-
-
-
-
-References:
+# References:
 [1] https://threejs.org
 [2] https://threejs.org/docs/#manual/en/introduction/Installation
